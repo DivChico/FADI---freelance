@@ -23,8 +23,8 @@ function App() {
   let date = moment(datejs);
 
   return (
-    <>
-      <div className="container min-h-screen mx-auto space-y-3 flex flex-col items-center">
+    <div className=" relatie">
+      <div className="container  min-h-screen mx-auto space-y-3 flex flex-col items-center">
         <motion.p
           initial={{ y: -50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
@@ -107,7 +107,8 @@ function App() {
           </div>
         </motion.div>
       </div>
-    </>
+      <div className=" w-52 h-2 bg-black absolute top-0 -right-10 rotate-45"></div>
+    </div>
   );
 }
 

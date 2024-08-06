@@ -12,3 +12,6 @@
   src: local("ScheherazadeNew-Bold"),
     url("./assets/fonts/ScheherazadeNew-Bold.ttf");
 }
+#root {
+  overflow-y: hidden;
+}
