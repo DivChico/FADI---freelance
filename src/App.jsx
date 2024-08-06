@@ -72,45 +72,36 @@ function App() {
         <motion.div
           initial={{ y: 50, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
-          transition={{ duration: 2, delay: 1 }}
+          transition={{ duration: 2 }}
           className=" space-y-2"
         >
           <p>شارك تؤحر</p>
           <div className=" flex gap-2 flex-wrap items-center justify-center">
             <FacebookShare
-              url={"https://github.com/ayda-tech/react-share-kit"}
-              quote={
-                "react-share-kit - social share buttons for next & react apps."
-              }
-              hashtag={"#react-share-kit"}
+              url={"https://do3a.onrender.com/"}
+              quote={"دعاء لروح المروحمة باذن الله"}
             />
 
             <TwitterShare
-              url={"https://github.com/ayda-tech/react-share-kit"}
-              title={
-                "react-share-kit - social share buttons for next & react apps."
-              }
+              url={"https://do3a.onrender.com/"}
+              title={"دعاء لروح المروحمة باذن الله"}
             />
             <WhatsappShare
-              url={"https://github.com/ayda-tech/react-share-kit"}
-              title={
-                "react-share-kit - social share buttons for next & react apps."
-              }
+              url={"https://do3a.onrender.com/"}
+              title={"دعاء لروح المروحمة باذن الله"}
               separator=":: "
             />
 
-            <TelegramShare
-              url={"https://github.com/ayda-tech/react-share-kit"}
-            />
+            <TelegramShare url={"https://do3a.onrender.com/"} />
 
             <FacebookMessengerShare
-              url="https://github.com/ayda-tech/react-share-kit"
-              redirectUri="https://github.com/ayda-tech/react-share-kit"
+              url="https://do3a.onrender.com/"
+              redirectUri="https://do3a.onrender.com/"
               appId={"dmm4kj9djk203k4liuf994p"}
             />
             <EmailShare
-              url={"https://github.com/ayda-tech/react-share-kit"}
-              subject={"Next Share"}
+              url={"https://do3a.onrender.com/"}
+              subject={"دعاء لروح المروحمة باذن الله"}
               body="body"
             />
           </div>
