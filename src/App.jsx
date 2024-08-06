@@ -53,7 +53,7 @@ function App() {
             className=" font-semibold"
             style={{ fontFamily: "ScheherazadeNew" }}
           ></p>
-          <p className=" font-semibold">{date.fromNow()}</p>
+          <p className=" font-semibold">منذ سنة و5 اشهر و يومين</p>
         </motion.div>
 
         <motion.p
