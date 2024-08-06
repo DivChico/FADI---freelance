@@ -72,7 +72,7 @@ function App() {
         <motion.div
           initial={{ y: 50, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
-          transition={{ duration: 2, delay: 3 }}
+          transition={{ duration: 2, delay: 1 }}
           className=" space-y-2"
         >
           <p>شارك تؤحر</p>
