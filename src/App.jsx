@@ -10,20 +10,19 @@ import {
   WhatsappShare,
 } from "react-share-kit";
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
+import DateCounter from "./components/DateCounter";
 
 function App() {
-  moment.locale("ar");
   const allDoa = [
     "(اللهم أنت ربها، وأنت خلقتها، وأنت هديتها للإسلام، وأنت قبضت روحها، وأنت أعلم بسرها وعلانيتها، جئنا شفعاء فاغفر له)",
     "(اللَّهمَّ اغْفِرْ لحيِّنا وميِّتِنا وشاهدنا وغائِبنا وصَغيرنا وَكبيرنا وذَكرِنا وأُنثانا اللَّهمَّ مَنْ أحييتَه مِنَّا فأحيِه علَى الإسلامِ ومن تَوَفَّيتَه مِنَّا فتَوفَّهُ علَى الإيمانِ اللَّهمَّ لا تحرمنا أجرَه ولا تُضلَّنا بعدَه)",
     "(اللَّهُمَّ، اغْفِرْ له وَارْحَمْهُ، وَاعْفُ عنْه وَعَافِهِ، وَأَكْرِمْ نُزُلَهُ، وَوَسِّعْ مُدْخَلَهُ، وَاغْسِلْهُ بمَاءٍ وَثَلْجٍ وَبَرَدٍ، وَنَقِّهِ مِنَ الخَطَايَا كما يُنَقَّى الثَّوْبُ الأبْيَضُ مِنَ الدَّنَسِ، وَأَبْدِلْهُ دَارًا خَيْرًا مِن دَارِهِ، وَأَهْلًا خَيْرًا مِن أَهْلِهِ، وَزَوْجًا خَيْرًا مِن زَوْجِهِ، وَقِهِ فِتْنَةَ القَبْرِ وَعَذَابَ النَّارِ)",
   ];
   let oneDoa = allDoa[Math.floor(Math.random() * allDoa.length)];
-  const datejs = new Date("2023-03-03 15:23:00");
-  let date = moment(datejs);
 
   return (
-    <div className=" relatie">
+    <div className="  ">
       <div className="container  min-h-screen mx-auto space-y-3 flex flex-col items-center">
         <motion.p
           initial={{ y: -50, opacity: 0 }}
@@ -53,7 +52,7 @@ function App() {
             className=" font-semibold"
             style={{ fontFamily: "ScheherazadeNew" }}
           ></p>
-          <p className=" font-semibold">منذ سنة و5 اشهر و يومين</p>
+          <DateCounter />
         </motion.div>
 
         <motion.p
@@ -63,26 +62,44 @@ function App() {
           className=" font-semibold"
           style={{ fontFamily: "ScheherazadeNew" }}
         >
-          الداعاء لروح المرحومة باذن الله{" "}
+          الدعاء لروح المرحومة باذن الله تعالى
         </motion.p>
         <motion.p
           initial={{ y: 50, opacity: 0 }}
-          whileInView={{ y: 0, opacity: 1 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 2, delay: 1 }}
+          className=" font-semibold"
+          style={{ fontFamily: "ScheherazadeNew" }}
+        >
+          ثناء جميل شعبان
+        </motion.p>
+        {/* 
+        <motion.img
+          initial={{ y: 50, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 2, delay: 2 }}
+          src="../src/assets/images/photo_2024-08-06_18-14-59.jpg"
+          alt=""
+          className=" w-52"
+        /> */}
+
+        <motion.img
+          initial={{ y: 50, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 2, delay: 2 }}
+          src="../src/assets/images/photo_2024-08-06_18-18-29.jpg"
+          alt=""
+          className=" w-52"
+        />
+        <motion.p
+          initial={{ y: 50, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 2, delay: 2 }}
           className=" font-bold text-2xl"
           style={{ fontFamily: "ScheherazadeNew" }}
         >
           {oneDoa}
         </motion.p>
-        <motion.img
-          initial={{ y: 50, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 2, delay: 2 }}
-          src=""
-          alt=""
-          height={"200px"}
-          width={"500px"}
-        />
         <motion.div
           initial={{ y: 50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
@@ -121,7 +138,7 @@ function App() {
           </div>
         </motion.div>
       </div>
-      <div className=" w-52 h-2 bg-black absolute top-0 -right-10 rotate-45"></div>
+      <div className=" w-52 h-2 bg-black absolute top-0 -right-9 rotate-45"></div>
     </div>
   );
 }
