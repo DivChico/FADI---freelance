@@ -27,7 +27,7 @@ function App() {
       <div className="container min-h-screen mx-auto space-y-3 flex flex-col items-center">
         <motion.p
           initial={{ y: -50, opacity: 0 }}
-          whileInView={{ y: 0, opacity: 1 }}
+          animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 2 }}
           className=" font-semibold"
         >
@@ -35,7 +35,7 @@ function App() {
         </motion.p>
         <motion.div
           initial={{ y: 50, opacity: 0 }}
-          whileInView={{ y: 0, opacity: 1 }}
+          animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 2 }}
         >
           <p className=" font-semibold">توفت منذ</p>
@@ -44,7 +44,7 @@ function App() {
 
         <motion.p
           initial={{ y: 50, opacity: 0 }}
-          whileInView={{ y: 0, opacity: 1 }}
+          animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 2, delay: 1 }}
           className=" font-semibold"
           style={{ fontFamily: "ScheherazadeNew" }}
@@ -62,7 +62,7 @@ function App() {
         </motion.p>
         <motion.img
           initial={{ y: 50, opacity: 0 }}
-          whileInView={{ y: 0, opacity: 1 }}
+          animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 2, delay: 2 }}
           src=""
           alt=""
