@@ -9,7 +9,10 @@ import {
   TwitterShare,
   WhatsappShare,
 } from "react-share-kit";
+import { motion } from "framer-motion";
+
 function App() {
+  moment.locale("ar");
   const allDoa = [
     "(اللهم أنت ربها، وأنت خلقتها، وأنت هديتها للإسلام، وأنت قبضت روحها، وأنت أعلم بسرها وعلانيتها، جئنا شفعاء فاغفر له)",
     "(اللَّهمَّ اغْفِرْ لحيِّنا وميِّتِنا وشاهدنا وغائِبنا وصَغيرنا وَكبيرنا وذَكرِنا وأُنثانا اللَّهمَّ مَنْ أحييتَه مِنَّا فأحيِه علَى الإسلامِ ومن تَوَفَّيتَه مِنَّا فتَوفَّهُ علَى الإيمانِ اللَّهمَّ لا تحرمنا أجرَه ولا تُضلَّنا بعدَه)",
@@ -22,59 +25,96 @@ function App() {
   return (
     <>
       <div className="container min-h-screen mx-auto space-y-3 flex flex-col items-center">
-        <p className=" font-semibold">{date.format("LLLL")}</p>
-        <div>
+        <motion.p
+          initial={{ y: -50, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ duration: 2 }}
+          className=" font-semibold"
+        >
+          {date.format("LLLL")}
+        </motion.p>
+        <motion.div
+          initial={{ y: 50, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ duration: 2 }}
+        >
           <p className=" font-semibold">توفت منذ</p>
           <p className=" font-semibold">{date.fromNow()}</p>
-        </div>
+        </motion.div>
 
-        <p className=" font-semibold" style={{ fontFamily: "ScheherazadeNew" }}>
+        <motion.p
+          initial={{ y: 50, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ duration: 2, delay: 1 }}
+          className=" font-semibold"
+          style={{ fontFamily: "ScheherazadeNew" }}
+        >
           الداعاء لروح المرحومة باذن الله{" "}
-        </p>
-        <p
+        </motion.p>
+        <motion.p
+          initial={{ y: 50, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ duration: 2, delay: 2 }}
           className=" font-bold text-2xl"
           style={{ fontFamily: "ScheherazadeNew" }}
         >
           {oneDoa}
-        </p>
-        <img src="" alt="" height={"200px"} width={"500px"} />
-        <p>شارك تؤحر</p>
-        <div className=" flex gap-2 flex-wrap items-center justify-center">
-          <FacebookShare
-            url={"https://github.com/ayda-tech/react-share-kit"}
-            quote={
-              "react-share-kit - social share buttons for next & react apps."
-            }
-            hashtag={"#react-share-kit"}
-          />
+        </motion.p>
+        <motion.img
+          initial={{ y: 50, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ duration: 2, delay: 2 }}
+          src=""
+          alt=""
+          height={"200px"}
+          width={"500px"}
+        />
+        <motion.div
+          initial={{ y: 50, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ duration: 2, delay: 3 }}
+          className=" space-y-2"
+        >
+          <p>شارك تؤحر</p>
+          <div className=" flex gap-2 flex-wrap items-center justify-center">
+            <FacebookShare
+              url={"https://github.com/ayda-tech/react-share-kit"}
+              quote={
+                "react-share-kit - social share buttons for next & react apps."
+              }
+              hashtag={"#react-share-kit"}
+            />
 
-          <TwitterShare
-            url={"https://github.com/ayda-tech/react-share-kit"}
-            title={
-              "react-share-kit - social share buttons for next & react apps."
-            }
-          />
-          <WhatsappShare
-            url={"https://github.com/ayda-tech/react-share-kit"}
-            title={
-              "react-share-kit - social share buttons for next & react apps."
-            }
-            separator=":: "
-          />
+            <TwitterShare
+              url={"https://github.com/ayda-tech/react-share-kit"}
+              title={
+                "react-share-kit - social share buttons for next & react apps."
+              }
+            />
+            <WhatsappShare
+              url={"https://github.com/ayda-tech/react-share-kit"}
+              title={
+                "react-share-kit - social share buttons for next & react apps."
+              }
+              separator=":: "
+            />
 
-          <TelegramShare url={"https://github.com/ayda-tech/react-share-kit"} />
+            <TelegramShare
+              url={"https://github.com/ayda-tech/react-share-kit"}
+            />
 
-          <FacebookMessengerShare
-            url="https://github.com/ayda-tech/react-share-kit"
-            redirectUri="https://github.com/ayda-tech/react-share-kit"
-            appId={"dmm4kj9djk203k4liuf994p"}
-          />
-          <EmailShare
-            url={"https://github.com/ayda-tech/react-share-kit"}
-            subject={"Next Share"}
-            body="body"
-          />
-        </div>
+            <FacebookMessengerShare
+              url="https://github.com/ayda-tech/react-share-kit"
+              redirectUri="https://github.com/ayda-tech/react-share-kit"
+              appId={"dmm4kj9djk203k4liuf994p"}
+            />
+            <EmailShare
+              url={"https://github.com/ayda-tech/react-share-kit"}
+              subject={"Next Share"}
+              body="body"
+            />
+          </div>
+        </motion.div>
       </div>
     </>
   );
