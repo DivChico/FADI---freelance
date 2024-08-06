@@ -87,7 +87,7 @@ function App() {
           initial={{ y: 50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 2, delay: 2 }}
-          src="../src/assets/images/photo_2024-08-06_18-18-29.jpg"
+          src="../public/images/photo_2024-08-06_18-18-29.jpg"
           alt=""
           className=" w-52"
         />
