@@ -31,7 +31,13 @@ function App() {
           transition={{ duration: 2 }}
           className=" font-semibold"
         >
-          {date.format("LLLL")}
+          <p
+            className=" font-semibold"
+            style={{ fontFamily: "ScheherazadeNew" }}
+          >
+            تاريخ الوفاة{" "}
+          </p>
+          <p>الثالث من شهر مارس سنة 2023 الساعة الثالثة عصرا و 23 دقيقة</p>
         </motion.p>
         <motion.div
           initial={{ y: 50, opacity: 0 }}
@@ -41,9 +47,7 @@ function App() {
           <p
             className=" font-semibold"
             style={{ fontFamily: "ScheherazadeNew" }}
-          >
-            توفت منذ
-          </p>
+          ></p>
           <p className=" font-semibold">{date.fromNow()}</p>
         </motion.div>
 
