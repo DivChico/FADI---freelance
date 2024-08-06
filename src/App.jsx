@@ -38,7 +38,12 @@ function App() {
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 2 }}
         >
-          <p className=" font-semibold">توفت منذ</p>
+          <p
+            className=" font-semibold"
+            style={{ fontFamily: "ScheherazadeNew" }}
+          >
+            توفت منذ
+          </p>
           <p className=" font-semibold">{date.fromNow()}</p>
         </motion.div>
 
