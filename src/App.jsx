@@ -1,35 +1,83 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-
+import moment from "moment";
+import "./App.css";
+import "../src/assets/fonts/ScheherazadeNew-Regular.ttf";
+import {
+  EmailShare,
+  FacebookMessengerShare,
+  FacebookShare,
+  TelegramShare,
+  TwitterShare,
+  WhatsappShare,
+} from "react-share-kit";
 function App() {
-  const [count, setCount] = useState(0)
+  const allDoa = [
+    "(اللهم أنت ربها، وأنت خلقتها، وأنت هديتها للإسلام، وأنت قبضت روحها، وأنت أعلم بسرها وعلانيتها، جئنا شفعاء فاغفر له)",
+    "(اللَّهمَّ اغْفِرْ لحيِّنا وميِّتِنا وشاهدنا وغائِبنا وصَغيرنا وَكبيرنا وذَكرِنا وأُنثانا اللَّهمَّ مَنْ أحييتَه مِنَّا فأحيِه علَى الإسلامِ ومن تَوَفَّيتَه مِنَّا فتَوفَّهُ علَى الإيمانِ اللَّهمَّ لا تحرمنا أجرَه ولا تُضلَّنا بعدَه)",
+    "(اللَّهُمَّ، اغْفِرْ له وَارْحَمْهُ، وَاعْفُ عنْه وَعَافِهِ، وَأَكْرِمْ نُزُلَهُ، وَوَسِّعْ مُدْخَلَهُ، وَاغْسِلْهُ بمَاءٍ وَثَلْجٍ وَبَرَدٍ، وَنَقِّهِ مِنَ الخَطَايَا كما يُنَقَّى الثَّوْبُ الأبْيَضُ مِنَ الدَّنَسِ، وَأَبْدِلْهُ دَارًا خَيْرًا مِن دَارِهِ، وَأَهْلًا خَيْرًا مِن أَهْلِهِ، وَزَوْجًا خَيْرًا مِن زَوْجِهِ، وَقِهِ فِتْنَةَ القَبْرِ وَعَذَابَ النَّارِ)",
+  ];
+  let oneDoa = allDoa[Math.floor(Math.random() * allDoa.length)];
+  const datejs = new Date("2023-03-03 15:23:00");
+  let date = moment(datejs);
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
+      <div className="container min-h-screen mx-auto space-y-3 flex flex-col items-center">
+        <p className=" font-semibold">{date.format("LLLL")}</p>
+        <div>
+          <p className=" font-semibold">توفت منذ</p>
+          <p className=" font-semibold">{date.fromNow()}</p>
+        </div>
+
+        <p className=" font-semibold" style={{ fontFamily: "ScheherazadeNew" }}>
+          الداعاء لروح المرحومة باذن الله{" "}
         </p>
+        <p
+          className=" font-bold text-2xl"
+          style={{ fontFamily: "ScheherazadeNew" }}
+        >
+          {oneDoa}
+        </p>
+        <img src="" alt="" height={"200px"} width={"500px"} />
+        <p>شارك تؤحر</p>
+        <div className=" flex gap-2 flex-wrap items-center justify-center">
+          <FacebookShare
+            url={"https://github.com/ayda-tech/react-share-kit"}
+            quote={
+              "react-share-kit - social share buttons for next & react apps."
+            }
+            hashtag={"#react-share-kit"}
+          />
+
+          <TwitterShare
+            url={"https://github.com/ayda-tech/react-share-kit"}
+            title={
+              "react-share-kit - social share buttons for next & react apps."
+            }
+          />
+          <WhatsappShare
+            url={"https://github.com/ayda-tech/react-share-kit"}
+            title={
+              "react-share-kit - social share buttons for next & react apps."
+            }
+            separator=":: "
+          />
+
+          <TelegramShare url={"https://github.com/ayda-tech/react-share-kit"} />
+
+          <FacebookMessengerShare
+            url="https://github.com/ayda-tech/react-share-kit"
+            redirectUri="https://github.com/ayda-tech/react-share-kit"
+            appId={"dmm4kj9djk203k4liuf994p"}
+          />
+          <EmailShare
+            url={"https://github.com/ayda-tech/react-share-kit"}
+            subject={"Next Share"}
+            body="body"
+          />
+        </div>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
