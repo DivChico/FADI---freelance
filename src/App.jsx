@@ -37,7 +37,12 @@ function App() {
           >
             تاريخ الوفاة{" "}
           </p>
-          <p>الثالث من شهر مارس سنة 2023 الساعة الثالثة عصرا و 23 دقيقة</p>
+          <p
+            className=" font-semibold"
+            style={{ fontFamily: "ScheherazadeNew" }}
+          >
+            الثالث من شهر مارس سنة 2023 الساعة الثالثة عصرا و 23 دقيقة
+          </p>
         </motion.p>
         <motion.div
           initial={{ y: 50, opacity: 0 }}
